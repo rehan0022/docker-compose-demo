@@ -1,17 +1,8 @@
-const http = require('http');
-
-// Simple test — server responds correctly
-const options = {
-    hostname: 'localhost',
-    port: 3000,
-    path: '/',
-    method: 'GET'
-};
+const fs = require('fs');
 
 console.log('Running tests...');
 
-// Test 1 — Check app.js exists
-const fs = require('fs');
+// Test 1 - pass hoga
 if (fs.existsSync('./app.js')) {
     console.log('✅ Test 1 Passed: app.js exists');
 } else {
@@ -19,22 +10,10 @@ if (fs.existsSync('./app.js')) {
     process.exit(1);
 }
 
-// Test 2 — Check port is defined in app
-const appContent = fs.readFileSync('./app.js', 'utf8');
-if (appContent.includes('3000')) {
-    console.log('✅ Test 2 Passed: Port 3000 configured');
+// Test 2 - INTENTIONALLY FAIL karo
+if (fs.existsSync('./config.json')) {
+    console.log('✅ Test 2 Passed: config.json exists');
 } else {
-    console.log('❌ Test 2 Failed: Port not configured');
-    process.exit(1);
+    console.log('❌ Test 2 Failed: config.json not found!');
+    process.exit(1);  // pipeline rok do!
 }
-
-// Test 3 — Check server.listen exists
-if (appContent.includes('server.listen')) {
-    console.log('✅ Test 3 Passed: Server listen configured');
-} else {
-    console.log('❌ Test 3 Failed: Server not configured');
-    process.exit(1);
-}
-
-console.log('');
-console.log('All tests passed! ✅');
