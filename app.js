@@ -7,9 +7,11 @@ const server = http.createServer((req, res) => {
         <h1>Hello from Docker!</h1>
         <p>Hostname: ${os.hostname()}</p>
         <p>Time: ${new Date().toISOString()}</p>
+        <p>Version: 2.0</p>
+        <p>Branch: DEV</p>
     `);
 });
 
 server.listen(3000, '0.0.0.0', () => {
-    console.log('Server running on port 3000');
+    console.log('Server v2.0 running on port 3000');
 });
