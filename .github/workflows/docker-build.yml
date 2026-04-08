@@ -46,6 +46,7 @@ jobs:
           tags: |
             rehanahmed076/myapp:latest
             rehanahmed076/myapp:${{ github.sha }}
+            rehanahmed076/myapp:v2.0.0
 
       - name: Deployment Summary
         run: |
