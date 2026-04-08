@@ -1,0 +1,12 @@
+{
+  "name": "myapp",
+  "version": "2.0.0",
+  "description": "DevOps Demo App by Rehan",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test.js"
+  },
+  "author": "Rehan Ahmed",
+  "license": "MIT"
+}
